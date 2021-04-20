@@ -40,7 +40,7 @@ Taro 提供两种内置样式我们可以直接引入生效：
 - `@tarojs/taro/html.css`: W3C HTML4 的内置样式，只有 HTML4 标签样式，体积较小，兼容性强，能适应大多数情况。
 - `@tarojs/taro/html5.css`: Chrome(Blink) HTML5 的内置样式，内置样式丰富，包括了大多数 HTML5 标签，体积较大，不一定支持所有小程序容器。
 
-```sass
+```scss
 // app.css
 // html4
 import '@tarojs/taro/html.css';
@@ -52,7 +52,7 @@ import '@tarojs/taro/html5.css';
 
 以往编写 H5 应用时，我们常常会写一些样式去重置浏览器默认样式。所以一般情况不需要引入，或者可以手动挑选必须的样式。
 
-```sass
+```scss
 // app.css
 // 以下是为了适配 VantUI 项目所需要的默认样式
 .h5-span {
@@ -153,7 +153,7 @@ config = {
 
 我们可以魔改它的样式来进行兼容：
 
-```sass
+```scss
 // 魔改 tabs 样式
 .van-tabs__line {
   display: none;
