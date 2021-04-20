@@ -1,0 +1,20 @@
+.h5-span {
+  display: inline;
+}
+
+.h5-button,
+.h5-input {
+  display: inline-block;
+}
+
+// van 按钮使用 button，button 组件在小程序有默认样式，需要覆盖
+
+.h5-button::after {
+  border: none;
+}
+
+.van-button--hairline::after {
+  transform-origin: unset;
+  width: unset;
+  height: unset;
+}
