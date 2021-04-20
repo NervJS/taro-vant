@@ -1,5 +1,5 @@
 <template>
-  <div class="h5-body">
+  <body>
     <demo-section class="demo-style">
       <demo-block :title="t('ellipsis')">
         <div class="van-ellipsis">{{ t('text1') }}</div>
@@ -26,7 +26,7 @@
         <div v-show="show" class="demo-animate-block" style="animationDuration: 0.5s" />
       </transition>
     </demo-section>
-  </div>
+  </body>
 </template>
 
 <script>

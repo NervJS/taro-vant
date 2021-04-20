@@ -27,11 +27,7 @@ taro build --type weapp
 
 相对于官方示例的 H5 代码，本项目主要做了以下兼容工作：
 
-### 1. `<body>`
-
-`<body>` 标签使用 `<div className='h5-body'>` 进行模拟。
-
-### 2. 浏览器默认样式
+### 1. 浏览器默认样式
 
 #### 方式一、开发者可以选择在全局引入浏览器的默认样式
 
@@ -75,7 +71,7 @@ import '@tarojs/taro/html5.css';
 }
 ```
 
-### 3. 尺寸单位
+### 2. 尺寸单位
 
 Taro 默认会对开发者编写的尺寸进行转换：
 
@@ -99,17 +95,17 @@ config = {
 }
 ```
 
-### 4. SVG 图标
+### 3. SVG 图标
 
 小程序不支持 SVG，目前组件库中的 SVG 图标都不能使用。
 
 开发者可以配置的图标尽量使用 `<img>`，组件内置的 SVG 图标则暂时没有办法处理。
 
-### 5. 获取元素尺寸
+### 4. 获取元素尺寸
 
 因为在小程序中获取元素尺寸的 API（SelectorQuery） 是**异步**的，和 H5 的**同步**获取（如 `elment.offsetHeight`）不一样。所以需要调用 H5 DOM API 获取元素尺寸的组件，如 `Calendar` 等均不能使用。
 
-### 6. 样式选择器
+### 5. 样式选择器
 
 以下选择器不能正常工作：
 
@@ -117,7 +113,7 @@ config = {
 - 媒体查询
 - 属性选择器，当属性不是对应小程序组件的内置属性时
 
-### 7. 兼容 Vue `<transition>`
+### 6. 兼容 Vue `<transition>`
 
 `<transition>` 组件内部使用了 `getComputedStyle`，用于嗅探组件上的动画样式。但是在小程序中没有办法实现 `getComputedStyle`，可以通过以下方法进行 hack：
 
@@ -129,7 +125,7 @@ config = {
 </transition>
 ```
 
-### 8. 兼容使用了过渡动画的组件
+### 7. 兼容使用了过渡动画的组件
 
 **VantUI** 中使用到过渡效果的组件，都是使用 `<transition>` 实现的。因此需要对它们进行兼容，可以分为两种情况：
 
@@ -147,7 +143,7 @@ config = {
 
 这些组件包括： `Dialog`、`NumberKeyboard`
 
-### 兼容 `Tabs`
+### 8. 兼容 `Tabs`
 
 `Tabs` 在 **line** 风格下，需要调用 `getBoundingClientRect` API，这样是不支持的。
 
@@ -174,7 +170,7 @@ config = {
 
 另外，复合组件 `Cascader`、 `Coupon` 也使用了 `Tabs` 组件，在使用它们时也需要加上上述兼容样式。
 
-### 兼容 `Form`
+### 9. 兼容 `Form`
 
 `Form`  组件里可以使用 **VantUI** 的 `Field`、`Checkbox`、`Radio`、`Stepper`、`Rate` 组件。
 
